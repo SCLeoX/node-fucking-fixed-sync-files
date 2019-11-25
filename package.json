@@ -1,15 +1,21 @@
 {
-  "name": "sync-files",
-  "version": "1.0.3",
+  "name": "fucking-fixed-sync-files",
+  "version": "1.0.0",
+  "files": [
+    "bin/sync-files.js",
+    "index.js"
+  ],
   "description": "Synchronize files or folders locally, with a watch option",
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "sync-files": "bin/sync-files.js"
+    "sync-files": "bin/sync-files.js",
+    "fucking-fixed-sync-files": "bin/sync-files.js"
+
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lmtm/node-sync-files.git"
+    "url": "https://github.com/SCLeoX/node-fucking-fixed-sync-files.git"
   },
   "keywords": [
     "rsync",
@@ -20,20 +26,20 @@
     "catw",
     "folder",
     "directory",
-    "file"
+    "file",
+    "watch"
   ],
   "author": "Nicolas Chambrier <naholyr@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lmtm/node-sync-files/issues"
+    "url": "https://github.com/SCLeoX/node-sync-files/issues"
   },
-  "homepage": "https://github.com/lmtm/node-sync-files",
+  "homepage": "https://github.com/SCLeoX/node-sync-files",
   "dependencies": {
-    "chalk": "^0.5.1",
-    "chokidar": "^1.0.0-rc3",
-    "fs-extra": "^0.16.3",
-    "lodash": "^3.1.0",
-    "minimist": "^1.1.0",
-    "update-notifier": "^0.3.0"
+    "chalk": "^3.0.0",
+    "chokidar": "^3.3.0",
+    "fs-extra": "^8.1.0",
+    "minimist": "^1.2.0",
+    "update-notifier": "^3.0.1"
   }
 }

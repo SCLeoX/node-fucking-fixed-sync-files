@@ -1,17 +1,17 @@
 "use strict";
 
-var defaults = require("lodash/object/defaults");
 var fs = require("fs-extra");
 var path = require("path");
 var chokidar = require("chokidar");
 
 
-module.exports = function (source, target, opts, notify) {
-  opts = defaults(opts || {}, {
+module.exports = function (source, target, opts = {}, notify) {
+  opts = {
     "watch": false,
     "delete": false,
-    "depth": Infinity
-  });
+    "depth": Infinity,
+    ...opts,
+  };
 
   if (typeof opts.depth !== "number" || isNaN(opts.depth)) {
     notify("error", "Expected valid number for option 'depth'");
@@ -30,7 +30,11 @@ module.exports = function (source, target, opts, notify) {
     chokidar.watch(source, {
       "persistent": true,
       "depth": opts.depth,
-      "ignoreInitial": true
+      "ignoreInitial": true,
+      awaitWriteFinish: {
+        stabilityThreshold: 50,
+        pollInterval: 10,
+      },
       // TODO "ignore": opts.ignore
     })
     //.on("raw", console.log.bind(console, "raw"))
