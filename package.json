@@ -40,6 +40,6 @@
     "chokidar": "^3.3.0",
     "fs-extra": "^8.1.0",
     "minimist": "^1.2.0",
-    "update-notifier": "^3.0.1"
+    "update-notifier": "^4.0.0"
   }
 }
